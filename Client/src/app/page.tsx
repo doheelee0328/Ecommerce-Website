@@ -1,13 +1,14 @@
-import Registration from './pages/registration /page'
-import Navbar from './components/navbar/navbar'
+import LoginRegister from './pages/login-register/page'
+// import Home from './pages/home/page'
 
 export default function Page() {
   return (
     <>
-      <Navbar />
-      <Registration />
+      {/* <Home /> */}
+      <LoginRegister />
     </>
   )
 }
 
 // page provides an automatic routing
+// this is the main app page
