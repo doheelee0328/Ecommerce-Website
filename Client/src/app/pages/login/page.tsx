@@ -40,33 +40,40 @@ export default function Login({
   }
 
   return (
-    <div>
-      <form onSubmit={submitHandler}>
-        <h1 className='text-black'>Welcome</h1>
-        <label>
-          <span>Email</span>
-          <input
-            type='email'
-            name='email'
-            onChange={formChangeHandler}
-            value={fields.email}
-          />
-        </label>
-        <label>
-          <span>Password</span>
-          <input
-            type={showText ? 'text' : 'password'}
-            name='password'
-            onChange={formChangeHandler}
-            value={fields.password}
-          />
-          <span onClick={setShowText}>Icon</span>
-        </label>
-        <button>SIGN IN</button>
-      </form>
-      <div>
-        <h3>Do not have an account? Please Sign up!</h3>
-        <button onClick={setRegister}>SIGN UP</button>
+    <div className='flex justify-center items-center min-h-screen'>
+      <div className='flex flex-row justify-center items-center shadow-lg mx-auto w-1/2 rounded-l p-6 absolute top-0 right-0 left-0'>
+        <form
+          onSubmit={submitHandler}
+          className='flex flex-col justify-center items-center '
+        >
+          <h1 className='text-black'>Welcome</h1>
+          <label>
+            <span>Email</span>
+            <input
+              type='email'
+              name='email'
+              onChange={formChangeHandler}
+              value={fields.email}
+            />
+          </label>
+          <label>
+            <span>Password</span>
+            <input
+              type={showText ? 'text' : 'password'}
+              name='password'
+              onChange={formChangeHandler}
+              value={fields.password}
+            />
+            <span onClick={setShowText}>Icon</span>
+          </label>
+          <button>SIGN IN</button>
+        </form>
+        <div className='flex flex-col justify-center items-center '>
+          <h3 className='w-1/2 text-align-center'>
+            Do not have an account? Please Sign up!
+          </h3>
+          <button onClick={setRegister}>SIGN UP</button>
+        </div>
       </div>
     </div>
   )
