@@ -40,7 +40,7 @@ export default function Login({
   }
 
   return (
-    <div className='flex justify-center items-center align-items-center h-screen w-full'>
+    <div className='flex justify-center items-center h-screen w-full'>
       <div className='flex flex-col w-1/2 shadow-lg p-10 mx-auto rounded-md gap-0.25'>
         <form
           onSubmit={submitHandler}
