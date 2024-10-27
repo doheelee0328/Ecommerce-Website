@@ -40,39 +40,51 @@ export default function Login({
   }
 
   return (
-    <div className='flex justify-center items-center min-h-screen'>
-      <div className='flex flex-row justify-center items-center shadow-lg mx-auto w-1/2 rounded-l p-6 absolute top-0 right-0 left-0'>
+    <div className='flex justify-center items-center align-items-center h-screen w-full'>
+      <div className='flex flex-col w-1/2 shadow-lg p-10 mx-auto rounded-md gap-0.25'>
         <form
           onSubmit={submitHandler}
-          className='flex flex-col justify-center items-center '
+          className='flex flex-col justify-center items-center gap-3'
         >
-          <h1 className='text-black'>Welcome</h1>
-          <label>
-            <span>Email</span>
+          <h1 className='text-black text-lg font-bold text-2xl'>Welcome</h1>
+
+          <label className='flex flex-col w-full'>
+            <span className='mb-2'>Email</span>
             <input
               type='email'
               name='email'
               onChange={formChangeHandler}
               value={fields.email}
+              className=' border border-gray-300 rounded-md w-full pt-2'
             />
           </label>
-          <label>
-            <span>Password</span>
-            <input
-              type={showText ? 'text' : 'password'}
-              name='password'
-              onChange={formChangeHandler}
-              value={fields.password}
-            />
-            <span onClick={setShowText}>Icon</span>
+
+          <label className='flex flex-col mt-1 w-full'>
+            <span className='mb-2'>Password</span>
+            <div className='flex flex-row justify-center '>
+              <input
+                type={showText ? 'text' : 'password'}
+                name='password'
+                onChange={formChangeHandler}
+                value={fields.password}
+                className=' border border-gray-300 rounded-md w-full pt-2'
+              />
+              <span onClick={setShowText} className=''>
+                Icon
+              </span>
+            </div>
           </label>
-          <button>SIGN IN</button>
+
+          <button className='rounded-md w-full mt-4'>SIGN IN</button>
         </form>
-        <div className='flex flex-col justify-center items-center '>
-          <h3 className='w-1/2 text-align-center'>
+
+        <div className='flex flex-col justify-center items-center'>
+          <h3 className='text-center'>
             Do not have an account? Please Sign up!
           </h3>
-          <button onClick={setRegister}>SIGN UP</button>
+          <button onClick={setRegister} className=' rounded-md'>
+            SIGN UP
+          </button>
         </div>
       </div>
     </div>
